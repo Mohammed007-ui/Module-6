@@ -34,10 +34,46 @@ To write a Python program to create a Parent class `Bird` and inherit two child 
 ### PROGRAM
 
 ```
+# Parent class
+class Bird:
+    def intro(self):
+        print("There are many types of birds.")
+        
+    def flight(self):
+        print("Most of the birds can fly but some cannot.")
+
+# Child class Sparrow
+class Sparrow(Bird):
+    def flight(self):
+        super().intro()  # Calling the intro() method of the parent class
+        print("Sparrows can fly.")
+
+# Child class Ostrich
+class Ostrich(Bird):
+    def flight(self):
+        super().intro()  # Calling the intro() method of the parent class
+        print("Ostriches cannot fly.")
+
+# Creating objects of each class
+obj_bird = Bird()
+obj_spr = Sparrow()
+obj_ost = Ostrich()
+
+# Calling the methods
+obj_bird.intro()
+obj_bird.flight()
+
+obj_spr.flight()
+
+obj_ost.flight()
 
 ```
 
 ### OUTPUT
+![image](https://github.com/user-attachments/assets/e27e35b0-6710-402e-84f4-2a295298d23c)
 
 
 ### RESULT
+The program successfully demonstrates method overriding in Python. The Sparrow and Ostrich classes inherit from the Bird class and override the flight() method. When the method is called, it executes the overridden version based on the object type, showing how method overriding works in object-oriented programming.
+
+
