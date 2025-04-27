@@ -26,14 +26,37 @@ To write a Python program to create a class `Student` with the private members `
 ### PROGRAM
 
 ```
+class Student:
+    def __init__(self, name, age):
+        self.name = name
+        self.__age = age  # Private member __age
 
+    # Getter method to retrieve the age
+    def get_age(self):
+        return self.__age
 
+    # Setter method to modify the age
+    def set_age(self, age):
+        self.__age = age
+
+# Create a Student object with name 'Jessa' and age 14
+stud = Student("Jessa", 14)
+
+# Print the name and the age using the getter method
+print(f"Name: {stud.name}, Age: {stud.get_age()}")  # Output: Name: Jessa, Age: 14
+
+# Use the setter method to change the age to 16
+stud.set_age(16)
+
+# Print the name and the updated age using the getter method
+print(f"Name: {stud.name}, Age: {stud.get_age()}")  # Output: Name: Jessa, Age: 16
 
 ```
 
 ### OUTPUT
+![image](https://github.com/user-attachments/assets/9171056a-2cf0-461c-a53d-dc760d3c73eb)
 
 
 ### RESULT
-
+The program successfully demonstrates the use of encapsulation by creating a Student class with private members (name, age). Getter and setter methods are used to access and modify the private age attribute.
 
