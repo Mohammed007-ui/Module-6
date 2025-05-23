@@ -34,10 +34,40 @@ To write a Python program to create a Parent class `Bird` and inherit two child 
 ### PROGRAM
 
 ```
+class Bird:
+    def intro(self):
+        print("There are many types of birds.")
+    
+    def flight(self):
+        print("Most of the birds can fly but some cannot.")
+
+class Sparrow(Bird):
+    def flight(self):
+        print("Sparrows can fly.")
+
+class Ostrich(Bird):
+    def flight(self):
+        print("Ostriches cannot fly.")
+
+# Create objects
+obj_bird = Bird()
+obj_spr = Sparrow()
+obj_ost = Ostrich()
+
+# Call intro method once
+obj_bird.intro()
+
+# Call flight methods
+obj_bird.flight()
+obj_spr.flight()
+obj_ost.flight()
+
 
 ```
 
 ### OUTPUT
 
+![image](https://github.com/user-attachments/assets/49906a44-8c32-4e3e-b611-c6ef0302f1ce)
 
 ### RESULT
+The program successfully demonstrates method overriding by allowing child classes to override the flight() method of the parent class Bird.
