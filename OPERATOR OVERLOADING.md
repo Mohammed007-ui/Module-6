@@ -32,11 +32,36 @@ To write a Python program to perform division of two complex numbers using the b
 ### PROGRAM
 
 ```
+class Complex:
+    def __init__(self, real, imag):
+        self.real = real
+        self.imag = imag
+
+    def __truediv__(self, other):
+        # (a+bi)/(c+di) = ((ac+bd)+(bc-ad)i)/(c^2 + d^2)
+        denominator = other.real**2 + other.imag**2
+        real_part = (self.real * other.real + self.imag * other.imag) / denominator
+        imag_part = (self.imag * other.real - self.real * other.imag) / denominator
+        return Complex(real_part, imag_part)
+
+    def __repr__(self):
+        return f"{self.real:.1f} + {self.imag:.1f}i"
+
+# Create Complex number objects
+Ob1 = Complex(10, 21)
+Ob2 = Complex(2, 3)
+
+# Perform division
+result = Ob1 / Ob2
+
+# Display the result
+print("Result of division:", result)
 
 ```
 
 ### OUTPUT
+![image](https://github.com/user-attachments/assets/43ddb89e-9204-4f56-9bc3-1e34719a2272)
 
 
 ### RESULT
-
+The program successfully demonstrates operator overloading by using the / operator to divide two complex numbers, with the result displayed in a properly formatted string.
